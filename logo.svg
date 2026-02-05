@@ -1,0 +1,20 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Resto Books logo</title>
+  <rect width="64" height="64" rx="12" fill="#4f7cff" />
+  <g transform="translate(0,0)" fill="#fff" stroke="#fff" stroke-width="0.6">
+    <!-- fork (left) -->
+    <g transform="translate(12,10)">
+      <rect x="6" y="6" width="3" height="30" rx="1" fill="#fff"/>
+      <rect x="4" y="6" width="7" height="4" rx="0.8" fill="#fff"/>
+      <rect x="5.4" y="6" width="1" height="10" fill="#fff"/>
+      <rect x="8.0" y="6" width="1" height="10" fill="#fff"/>
+    </g>
+    <!-- knife (right) -->
+    <g transform="translate(36,10)">
+      <rect x="3" y="6" width="4" height="30" rx="1.6" fill="#fff"/>
+      <path d="M0 6c6-8 14-4 14 0c0 8-6 30-10 30c-3 0-4-6-4-10C0 28 0 6 0 6z" fill="#fff"/>
+    </g>
+    <!-- RB monogram -->
+    <text x="32" y="52" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="10" font-weight="700" fill="#fff">RB</text>
+  </g>
+</svg>

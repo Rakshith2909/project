@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resto Books</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!-- Favicon / Tab icon (SVG) -->
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="shortcut icon" href="assets/logo.svg">
+<link rel="mask-icon" href="assets/logo.svg" color="#2ebc8a">
+<!-- Canonical and social metadata for your site -->
+<link rel="canonical" href="index.html">
+<meta property="og:title" content="Resto Books">
+<meta property="og:url" content="index.html">
+<meta name="theme-color" content="#2ebc8a">
+</head>
+
+<body>
+
+<header>
+    <div class="brand">
+        <a href="index.html" target="_blank" rel="noopener noreferrer" aria-label="Open website"><img src="assets/logo.svg" alt="Resto Books logo" class="logo"></a>
+        <strong><a href="index.html" target="_blank" rel="noopener noreferrer">Resto Books</a></strong>
+    </div>
+    <nav>
+        <button onclick="showScreen('dashboardScreen')">Dashboard</button>
+        <button onclick="showScreen('addExpenseScreen')">Add Expense</button>
+        <button onclick="showScreen('chatbotScreen')">AI Chatbot</button>
+        <button onclick="showScreen('reportsScreen')">Reports</button>
+        <button onclick="showScreen('loginScreen')">Login</button>
+    </nav>
+    <div class="theme-controls" aria-label="Theme selector">
+        <label for="primaryColor">Theme:</label>
+        <button class="theme-preset" onclick="applyPreset('emerald')" title="Emerald">Emerald</button>
+        <button class="theme-preset" onclick="applyPreset('sunset')" title="Sunset">Sunset</button>
+        <button class="theme-preset" onclick="applyPreset('indigo')" title="Indigo">Indigo</button>
+        <input type="color" id="primaryColor" title="Primary color">
+        <input type="color" id="accentColor" title="Accent color">
+        <button class="theme-apply" onclick="applyCustomTheme()">Apply</button>
+    </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Resto Books, made simple</h1>
+      <p>Track sales, expenses and reports — fast, secure and tailored for restaurants.</p>
+      <a class="primary" href="index.html" target="_blank" rel="noopener noreferrer">Visit Website</a>
+    </div>
+    <div class="hero-illustration">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Delicious restaurant dish" class="hero-photo">
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2>Restaurant Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop" alt="Cozy dining area">
+    <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=800&auto=format&fit=crop" alt="Chef preparing food">
+    <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=800&auto=format&fit=crop" alt="Plated gourmet meal">
+  </div>
+</section>
+
+<div id="container">
+
+<!-- ------------------------ DASHBOARD ------------------------ -->
+<div id="dashboardScreen" class="">
+    <h2>Dashboard</h2>
+    <div class="dashboard-grid">
+
+        <div class="card">
+            <h3><svg class="card-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="12" width="3" height="8" rx="1" fill="currentColor"></rect><rect x="9" y="8" width="3" height="12" rx="1" fill="currentColor"></rect><rect x="15" y="4" width="3" height="16" rx="1" fill="currentColor"></rect></svg>Today's Sales</h3>
+            <p>Dine-in: ₹8,500</p>
+            <p>Takeaway: ₹3,200</p>
+            <p>Online: ₹6,100</p>
+        </div>
+
+        <div class="card">
+            <h3><svg class="card-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M3 6h18v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6z" fill="currentColor" fill-opacity="0.95"></path><path d="M8 10h8v2H8z" fill="#fff"></path></svg>Expenses Summary</h3>
+            <p>Today: ₹2,450</p>
+            <p>This Month: ₹46,200</p>
+        </div>
+
+        <div class="card">
+            <h3><svg class="card-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M3 17h18v2H3z" fill="currentColor"></path><path d="M5 12l4-4 4 4 6-6v8H5z" fill="currentColor"></path></svg>Profit Snapshot</h3>
+            <p>Today's Profit: ₹15,350</p>
+        </div>
+
+        <div class="card">
+            <h3><svg class="card-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2" fill="currentColor"></rect><rect x="4" y="9" width="8" height="2" fill="#fff"></rect></svg>Pending Supplier Payments</h3>
+            <p>3 invoices pending</p>
+        </div>
+
+        <div class="card">
+            <h3><svg class="card-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="12" rx="2" fill="currentColor"></rect><path d="M3 11h18" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path></svg>Low Inventory Alerts</h3>
+            <p>Tomatoes, Onions, Cooking Oil</p>
+        </div>
+    </div>
+</div>
+
+<!-- ------------------------ ADD EXPENSE ------------------------ -->
+<div id="addExpenseScreen" class="hidden">
+    <h2>Add Expense</h2>
+
+    <div class="card">
+        <select id="expenseCategory">
+            <option>Raw Materials</option>
+            <option>Staff</option>
+            <option>Rent</option>
+            <option>Utilities</option>
+            <option>Miscellaneous</option>
+        </select>
+
+        <input type="number" id="expenseAmount" placeholder="Amount (₹)">
+        <input type="text" id="expenseNote" placeholder="Description">
+
+        <button class="primary" onclick="saveExpense()">Save Expense</button>
+    </div>
+</div>
+
+<!-- ------------------------ LOGIN ------------------------ -->
+<div id="loginScreen" class="hidden">
+    <h2>Sign In</h2>
+
+    <div class="login-card card">
+        <input id="loginEmail" type="email" placeholder="Email">
+        <input id="loginPassword" type="password" placeholder="Password">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <label style="font-size:14px;color:var(--text-muted)"><input type="checkbox" id="rememberMe"> Remember me</label>
+            <a href="#" style="font-size:14px;color:var(--accent-green);text-decoration:none;">Forgot?</a>
+        </div>
+        <button class="primary" onclick="signIn()">Sign In</button>
+    </div>
+</div>
+
+<!-- ------------------------ CHATBOT ------------------------ -->
+<div id="chatbotScreen" class="hidden">
+    <h2>AI Chatbot Input</h2>
+
+    <div class="chat-window" id="chatWindow"></div>
+
+    <div class="input-row">
+      <input id="chatInput" placeholder='Type e.g. "Paid ₹2500 for vegetables today"'>
+      <button class="primary" onclick="sendChat()"><svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M2 21l20-9L2 3v7l15 2-15 2v7z" fill="currentColor"/></svg> Send</button>
+    </div>
+</div>
+
+<!-- ------------------------ REPORTS ------------------------ -->
+<div id="reportsScreen" class="hidden">
+    <h2>Reports</h2>
+
+    <div class="report-card">
+        <h3>Daily Sales Report</h3>
+        <p>Dine-in: ₹8,500 | Takeaway: ₹3,200 | Online: ₹6,100</p>
+        <button class="primary"><svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 3v10m0 0l4-4m-4 4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="3" y="17" width="18" height="4" rx="1" fill="currentColor"/></svg> Download as PDF</button>
+    </div>
+
+    <div class="report-card">
+        <h3>Monthly Profit Summary</h3>
+        <p>Revenue: ₹4,80,000</p>
+        <p>Expenses: ₹1,52,000</p>
+        <p>Profit: ₹3,28,000</p>
+        <button class="primary"><svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 3v10m0 0l4-4m-4 4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="3" y="17" width="18" height="4" rx="1" fill="currentColor"/></svg> Download as PDF</button>
+    </div>
+
+    <div class="report-card">
+        <h3>GST / Tax Report</h3>
+        <p>GST Collected: ₹38,400</p>
+        <p>GST Paid: ₹22,100</p>
+        <button class="primary"><svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 3v10m0 0l4-4m-4 4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="3" y="17" width="18" height="4" rx="1" fill="currentColor"/></svg> Download as PDF</button>
+    </div>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Visit our website: <a href="index.html" target="_blank" rel="noopener noreferrer">Resto Books</a></p>
+  </div>
+</footer>
+
+<script>
+
+/* -------- SCREEN SWITCHING -------- */
+function showScreen(screen) {
+    // hide all main container screens
+    document.querySelectorAll('#container > div').forEach(div => {
+        div.classList.add('hidden');
+    });
+
+    // show requested screen
+    document.getElementById(screen).classList.remove('hidden');
+
+    // hide or show top sections (hero + gallery) depending on the selected screen
+    const topSections = document.querySelectorAll('.hero, .gallery');
+    const hideTopFor = ['addExpenseScreen', 'chatbotScreen', 'reportsScreen', 'loginScreen'];
+
+    if (hideTopFor.includes(screen)) {
+        topSections.forEach(el => el.classList.add('hidden'));
+        // scroll to the content area for better UX
+        document.getElementById('container').scrollIntoView({ behavior: 'smooth' });
+    } else {
+        topSections.forEach(el => el.classList.remove('hidden'));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+/* -------- SAVE EXPENSE (MVP stub) -------- */
+function saveExpense() {
+    alert('Expense saved (MVP simulation)');
+}
+
+/* -------- AI CHATBOT (MVP front-end only) -------- */
+function sendChat() {
+    const input = document.getElementById('chatInput').value;
+    if (!input.trim()) return;
+
+    // User message
+    addChatMessage(input, false);
+
+    // Fake AI response
+    setTimeout(() => {
+        const reply = "Recorded: " + input + " (auto-tagged as Raw Materials)";
+        addChatMessage(reply, true);
+    }, 600);
+
+    document.getElementById('chatInput').value = "";
+}
+
+function addChatMessage(text, isBot) {
+    const chatWindow = document.getElementById('chatWindow');
+    const msg = document.createElement('div');
+    msg.className = 'chat-msg' + (isBot ? ' bot' : '');
+    msg.textContent = text;
+    chatWindow.appendChild(msg);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function signIn() {
+    const email = document.getElementById('loginEmail').value.trim();
+    const pass = document.getElementById('loginPassword').value.trim();
+    if (!email || !pass) {
+        alert('Please enter email and password');
+        return;
+    }
+    // Mock sign-in success for this demo
+    alert('Signed in as ' + email);
+    // on success, go to dashboard and show top sections
+    showScreen('dashboardScreen');
+}
+
+/* ---------- Theme presets and color picker ---------- */
+function applyPreset(name) {
+    const presets = {
+        emerald: { primary: '#2ebc8a', accent: '#ff8c42' },
+        sunset: { primary: '#ff8c42', accent: '#4f7cff' },
+        indigo: { primary: '#4f7cff', accent: '#2ebc8a' }
+    };
+    const p = presets[name];
+    if (p) setThemeColors(p.primary, p.accent);
+}
+
+function applyCustomTheme() {
+    const primary = document.getElementById('primaryColor').value;
+    const accent = document.getElementById('accentColor').value;
+    setThemeColors(primary, accent);
+}
+
+function setThemeColors(primary, accent) {
+    document.documentElement.style.setProperty('--accent-green', primary);
+    document.documentElement.style.setProperty('--accent-orange', accent);
+    // generate a darker shade for hover states
+    document.documentElement.style.setProperty('--accent-green-700', shadeColor(primary, -30));
+}
+
+function shadeColor(hex, amt) {
+    // simple brightness adjust
+    let col = hex.replace('#','');
+    const num = parseInt(col,16);
+    let r = (num >> 16) + amt;
+    let g = ((num >> 8) & 0x00FF) + amt;
+    let b = (num & 0x0000FF) + amt;
+    r = Math.max(Math.min(255, r), 0);
+    g = Math.max(Math.min(255, g), 0);
+    b = Math.max(Math.min(255, b), 0);
+    return '#' + ( (r<<16) | (g<<8) | b ).toString(16).padStart(6, '0');
+}
+
+// initialize color inputs from CSS variables
+document.addEventListener('DOMContentLoaded', () => {
+    const styles = getComputedStyle(document.documentElement);
+    const primary = styles.getPropertyValue('--accent-green').trim() || '#2ebc8a';
+    const accent = styles.getPropertyValue('--accent-orange').trim() || '#ff8c42';
+    document.getElementById('primaryColor').value = primary;
+    document.getElementById('accentColor').value = accent;
+});
+
+</script>
+
+</body>
+</html>
